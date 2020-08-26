@@ -1,0 +1,22 @@
+#add .card {
+    padding: 20px;
+    padding: 20px;
+background: #64379f;
+color: #fff;
+}
+#add h2 {
+text-align: center;
+margin-bottom: 20px;
+font-family: 'Aclonica';
+}
+#add input {
+    border-radius: 50px;
+}
+#add .btnContent {
+text-align: center;
+margin-top: 30px;
+}
+#add .btnContent .btn {
+padding: 4px 54px;
+border-radius: 50px;
+}

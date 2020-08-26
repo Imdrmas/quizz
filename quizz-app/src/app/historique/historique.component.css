@@ -1,0 +1,14 @@
+.card {
+    background-color: #64379f;
+    padding: 16px;
+    color: #ffffff;
+}
+th {
+    border: 0;
+    color: #ffffff;
+}
+td {
+    background: aliceblue;
+    border-top: 6px solid #64379f;
+    padding: 5px 15px;
+}

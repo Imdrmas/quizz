@@ -1,0 +1,19 @@
+.addQuestion {
+    background: #64379f;
+    color: #ffffff;
+    margin: 0 !important;
+padding: 15px;
+}
+#response input {
+    padding: 10px !important;
+    border-radius: 50px;
+    margin-bottom: 5px;
+}
+.btnContent {
+    float: right;
+     margin-right: 34px;
+    }
+  .btnContent .btn {
+    padding: 4px 20px;
+    border-radius: 50px;
+    }

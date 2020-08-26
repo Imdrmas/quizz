@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-2">
+     <div class="card" style="width: 18rem; cursor: pointer;" routerLink="/home">
+       <img class="card-img-top img-thumbnail" src="https://media.discordapp.net/attachments/747757123055910982/747774704437166080/download.png" alt="Card image cap">
+     </div>  
+    </div>
+    <div class="col-lg-4" style="position: relative;">
+     <h1 style="position: absolute; bottom: 80px;">Une seule réponse <br> est posible: </h1>
+   </div>
+   <div class="col-lg-2" id="loginBtn">
+     <button class="btn btn-primary btn-lg" style="background: #64379f !important;
+     color: #fff; border: 0;" (click)="openRegister()">Créer un compte joueur</button>
+     <button class="btn btn-primary btn-lg" style="   background: #64379f !important;
+     color: #fff; border: 0; margin-top: 5px;" routerLink="/home">Se connecter</button>
+   </div>
+   <a routerLink="/historique">historique</a> <br>
+   <a routerLink="/theme">Quizz</a>
+   <a routerLink="/questions">questions</a>
+  </div>

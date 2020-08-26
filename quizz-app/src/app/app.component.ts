@@ -8,14 +8,5 @@ import { AddQuestionComponent } from './add-question/add-question.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  dialogRef: any;
 
-  constructor(private dialog: MatDialog ) {}
-
-    // tslint:disable-next-line: typedef
-    public openRegister() {
-    this.dialogRef = this.dialog.open(AddQuestionComponent, {
-      width: '300px',
-    });
-  }
 }

@@ -1,0 +1,26 @@
+h1 {
+
+    text-align: center;
+    padding: 10px;
+    color: aliceblue;
+    }
+#time {
+    background: #27104e;
+    color: blanchedalmond;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 10px 2px 12px 0;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+#header {
+    background: #64379f;
+    margin-left: -30px;
+}
+#quizz {
+    background: #64379f;  
+    padding: 16px;
+    color: aliceblue;
+}
