@@ -13,34 +13,20 @@
             <th scope="col">Score</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let h of histories">
           <tr>
-            <td>Jean</td>
-            <td>Facile</td>
-            <td>Java</td>
-            <td>1m21</td>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>Mariane</td>
-            <td>Difficile</td>
-            <td>HTML</td>
-            <td>3m21</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>Drmas</td>
-            <td>Facile</td>
-            <td>Python</td>
-            <td>55sec</td>
-            <td>9</td>
+            <td>{{h.username}}</td>
+            <td>{{h.levelName}}</td>
+            <td>{{h.themeName}}</td>
+            <td>{{h.total}}</td>
+            <td>{{h.sore}}</td>
           </tr>
         </tbody>
       </table>
   </div>
 
 <div>
-    <button class="btn btn-primary" (click)="openRegister()"
-    style="background: #3a9efd; margin-top: 15px; border-color: #3a9efd;">Créer une question</button>
+    <button class="btn btn-primary" [routerLink]="['/theme']"
+    style="background: #3a9efd; margin-top: 15px; border-color: #3a9efd;">Commoncer le quizz</button>
 </div>
 </div>

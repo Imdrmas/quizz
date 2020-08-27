@@ -3,30 +3,17 @@
         <div id="sideBar">
             <div class="card" style="width: 18rem; cursor: pointer; margin-left: 60px; " routerLink="/home">
                 <img class="card-img-top img-thumbnail" src="https://media.discordapp.net/attachments/747757123055910982/747774704437166080/download.png" alt="Card image cap">
-              </div>  
+              </div>
               <h3 style="margin: 18px 0 -12px 15px;">Thèmes</h3>
               <hr>
 
-              <div style="padding: 16px;">
+              <div style="padding: 16px;" *ngFor="let t of themes">
                   <div class="card" id="theme">
-                     <h4>HTML</h4>
-                     <button class="btn btn-danger" style="background: #3a9efd; border: 0;" routerLink="/theme/themeContent">GO!</button>
+                     <h4>{{t.name}}</h4>
+                     <button class="btn btn-danger" style="background: #3a9efd; border: 0;" [routerLink]="['/theme/themeContent/', t.id]">GO!</button>
                   </div>
               </div>
 
-              <div style="padding: 16px;">
-                <div class="card" id="theme">
-                   <h4>PYTHON</h4>
-                   <button class="btn btn-danger" style="background: #3a9efd; border: 0;" routerLink="/theme/themeContent">GO!</button>
-                </div>
-            </div>
-
-            <div style="padding: 16px;">
-                <div class="card" id="theme">
-                   <h4>JAVA</h4>
-                   <button class="btn btn-danger" style="background: #3a9efd; border: 0;" routerLink="/theme/themeContent">GO!</button>
-                </div>
-            </div>
             <button type="button" class="btn btn-outline-danger" style="margin-left: 20px;">Deconnecter</button>
         </div>
     </div>

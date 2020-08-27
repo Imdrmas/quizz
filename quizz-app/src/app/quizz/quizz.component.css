@@ -1,5 +1,4 @@
 h1 {
-
     text-align: center;
     padding: 10px;
     color: aliceblue;
@@ -20,7 +19,7 @@ h1 {
     margin-left: -30px;
 }
 #quizz {
-    background: #64379f;  
+    background: #64379f;
     padding: 16px;
     color: aliceblue;
 }

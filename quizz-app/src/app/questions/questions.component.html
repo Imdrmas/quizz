@@ -3,30 +3,31 @@
         <div id="sideBar">
             <div class="card" style="width: 18rem; cursor: pointer; margin-left: 60px; " routerLink="/home">
                 <img class="card-img-top img-thumbnail" src="https://media.discordapp.net/attachments/747757123055910982/747774704437166080/download.png" alt="Card image cap">
-              </div>  
+              </div>
               <h3 style="margin: 18px 0 -12px 15px;">Quizz</h3>
               <hr>
 
               <div style="padding: 16px;">
                   <div class="card" id="theme">
-                 
+
                     <div class="list-group">
                         <button type="button" class="list-group-item list-group-item-action active" style="cursor: default;">
                          Thèmes
                         </button>
-                        <button type="button" class="list-group-item d-flex justify-content-between list-group-item-action" 
-                        routerLink="/questions/questionContent">JAVA <div>
+                        <button style="cursor: default" type="button" class="list-group-item d-flex justify-content-between list-group-item-action"
+                         *ngFor="let theme of themes">
+                          <a [routerLink]="['/questions/level/', theme.id]">{{theme.name}} </a>
+                          <div>
                             <i class="far fa-edit"></i>
                             <i class='fas fa-trash-alt' style='color:red; margin: 0 12px'></i>
+                            <i class="fas fa-plus-square" (click)="addLevel(theme.id)"></i>
                          </div></button>
-                        <button type="button" class="list-group-item list-group-item-action">HTML</button>
-                        <button type="button" class="list-group-item list-group-item-action">PYTHON</button>
-                    
-                        <button type="button" class="list-group-item list-group-item-action active" 
+
+                        <button type="button" class="list-group-item list-group-item-action active"
                         style="text-align: center;" (click)="openRegister()">Ajouter un thème</button>
                       </div>
 
-                  
+
                     </div>
               </div>
 

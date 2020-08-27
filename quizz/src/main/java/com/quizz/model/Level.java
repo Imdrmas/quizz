@@ -15,30 +15,22 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.NaturalId;
 
 import lombok.*;
 
 
-@Data
-@Getter
-@Setter
-@RequiredArgsConstructor(staticName = "of")
-@AllArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString
 @Entity
 public class Level {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	
-	@Enumerated(EnumType.STRING)
-    @NaturalId
-    @Column(length = 60)
-	private Difficulty difficulty;
-	
+
+	private String difficulty;
+
 	@OneToMany(mappedBy = "level", cascade = CascadeType.ALL)
 	private List<Question> questions;
 	
@@ -51,7 +43,46 @@ public class Level {
 		}
 		getQuestions().add(question);
 		question.setLevel(this);
-		
 	}
 
+	public Level() {
+	}
+
+	public Level(String difficulty, List<Question> questions, Theme theme) {
+		this.difficulty = difficulty;
+		this.questions = questions;
+		this.theme = theme;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(String difficulty) {
+		this.difficulty = difficulty;
+	}
+
+	public List<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
+
+	public Theme getTheme() {
+		return theme;
+	}
+
+	public void setTheme(Theme theme) {
+		this.theme = theme;
+	}
 }

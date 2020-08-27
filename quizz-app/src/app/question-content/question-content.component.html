@@ -1,34 +1,32 @@
-<h1 style="border-bottom: 6px solid #fff;">Questions : JAVA</h1>
 
 
-<div class="row">
-    <div class="col-lg-5">
         <div class="card">
-                 
+
             <div class="list-group">
                 <button type="button" class="list-group-item list-group-item-action active" style="cursor: default;">
-                 Question
+                 Questions
                 </button>
-                <button type="button" class="list-group-item d-flex justify-content-between list-group-item-action" 
-                routerLink="/questions/questionContent/responses">
-                Qu'est-ce que un random ...., 
-                 <div>
-                    <i class="far fa-edit"></i>
-                    <i class='fas fa-trash-alt' style='color:red; margin: 0 12px'></i>
-                    <span class="badge badge-primary badge-pill">1</span>
-                 </div>
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">Qu'est-ce que ....,
-                
-                </button>
-                <button type="button" class="list-group-item list-group-item-action">Qu'est-ce que ....,</button>       
-           
-              </div>
-
-          
             </div>
-    </div>
-    <div class="col-lg-7">
-        <router-outlet></router-outlet> 
-    </div>
-</div>
+            </div>
+
+        <mat-accordion>
+          <mat-expansion-panel *ngFor="let q of questions, let i = index">
+            <mat-expansion-panel-header (click)="findResponse(q.id)">
+              <mat-panel-title>
+                {{i+1}}
+              </mat-panel-title>
+              <mat-panel-description>
+                {{q.question}}
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div>
+              <p style="color: red">{{q?.response1}}</p>
+              <p style="color: red">{{q?.response2}}</p>
+              <p style="color: red">{{q?.response3}}</p>
+              <p *ngIf="q.correct==q?.response1" style="color: olivedrab">Correct réponse:  {{q?.response1}}</p>
+              <p *ngIf="q.correct==q?.response2" style="color: olivedrab">Correct réponse:  {{q?.response2}}</p>
+              <p *ngIf="q.correct==q?.response3" style="color: olivedrab">Correct réponse:  {{q?.response3}}</p>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>

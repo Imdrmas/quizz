@@ -13,15 +13,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home/home.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { QuestionContentComponent } from './question-content/question-content.component';
+import {LevelComponent} from "./level/level.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
-  {path: 'historique', component: HistoriqueComponent },
+  {path: 'historique/:userUsername', component: HistoriqueComponent },
   {path: 'theme', component: ThemeComponent,
    children: [
-    {path: 'quizz', component: QuizzComponent},
-    {path: 'themeContent', component: ThemeContentComponent},
+    {path: 'quizz/:idLevel', component: QuizzComponent},
+    {path: 'themeContent/:id', component: ThemeContentComponent},
     {path: '', component: WelcomeComponent}
    ]
   },
@@ -30,13 +31,14 @@ const routes: Routes = [
     component: QuestionsComponent,
    children: [
     {path: '', component: WelcomeComponent},
-    {path: 'addTheme', component: AddThemeComponent},
-    {path: 'questionContent', component: QuestionContentComponent,
-    children: [
-      {
-        path: 'responses', component: ResponsesComponent
-      }
-    ]}
+    {path: 'level/:id', component: LevelComponent,
+      children: [
+        {path: 'questionContent/:id', component: QuestionContentComponent}
+      ]},
+     {
+       path: 'responses/:id', component: ResponsesComponent
+     }
+
    ]
   }
 

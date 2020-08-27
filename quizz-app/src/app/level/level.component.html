@@ -1,0 +1,26 @@
+<h1 style="border-bottom: 6px solid #fff;">Level : JAVA</h1>
+
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action active" style="cursor: default;">
+          Difficulty
+        </button>
+        <button type="button" class="list-group-item d-flex justify-content-between list-group-item-action"
+                *ngFor="let level of levels" style="cursor: default">
+          <a [routerLink]="['/questions/level/' + idTheme + '/questionContent/' + level.id]">{{level.difficulty}}</a>
+          <div>
+            <i class="far fa-edit"></i>
+            <i class='fas fa-trash-alt' style='color:red; margin: 0 12px'></i>
+            <button type="button" class="btn btn-link" (click)="openRegister(level.id)">Add question</button>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>

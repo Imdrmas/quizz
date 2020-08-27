@@ -5,7 +5,7 @@
 
      <div class="col-lg-2">
         <div id="time">
-            120s
+          {{counter}}s
         </div>
      </div>
     </div>
@@ -13,10 +13,10 @@
     <div class="row">
         <div class="col-lg-7">
             <button class="btn btn-danger" style="background: #64379f; border: 0; margin-top: 10px;">
-                <h4>Allez "Username" !</h4>
+                <h4>Allez "{{username}}" !</h4>
               </button>
         </div>
- 
+
       <div class="col-lg-5">
          <h3 style="margin-top: 10px;">Cochez la bon réponse</h3>
       </div>
@@ -26,61 +26,25 @@
 
 
 
-<div style="padding: 16px;">
-  <div class="card" id="quizz" style="width: 80rem;">
-     <h3>Question 1: Qu'est-ce que ...?</h3>
-    
-     <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-        <label class="form-check-label" for="exampleRadios1">
-          Réponse 1: C'est la .....
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-        <label class="form-check-label" for="exampleRadios2">
-            Réponse 2: C'est la .....
-        </label>
-      </div>
-      <div class="form-check disabled">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-        <label class="form-check-label" for="exampleRadios3">
-            Réponse 3: C'est la .....
-        </label>
-      </div>
+<div style="padding: 16px;" *ngFor="let q of questions">
+  <div class="card" id="quizz" style="width: 70rem;">
+     <h4>{{q.question}} ...?</h4>
+
+    <mat-radio-group aria-label="Select an option" (change)="setResponses($event)">
+      <mat-radio-button [value]="q.response1">{{q.response1}}</mat-radio-button> <br>
+      <mat-radio-button [value]="q.response2">{{q.response2}}</mat-radio-button> <br>
+      <mat-radio-button [value]="q.response3">{{q.response3}}</mat-radio-button>
+    </mat-radio-group>
 
   </div>
 </div>
 
-
-<div style="padding: 16px;">
-    <div class="card" id="quizz" style="width: 80rem;">
-       <h3>Question 1: Qu'est-ce que ...?</h3>
-      
-       <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-          <label class="form-check-label" for="exampleRadios1">
-            Réponse 1: C'est la .....
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-          <label class="form-check-label" for="exampleRadios2">
-              Réponse 2: C'est la .....
-          </label>
-        </div>
-        <div class="form-check disabled">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-          <label class="form-check-label" for="exampleRadios3">
-              Réponse 3: C'est la .....
-          </label>
-        </div>
-
-    </div>
-  </div>
 
   <div style="text-align: center;">
-    <button class="btn btn-danger" style="background: #27104e; border: 0; margin-top: 10px;" (click)="openResult()">
+    <button class="btn btn-danger" [disabled]="btnDisabled" style="background: #27104e; border: 0; margin-top: 10px;" (click)="openResult(level.themeName, level.difficulty)">
         <h4>Valider le quizz</h4>
       </button>
+
+    <br><br>
 </div>
+

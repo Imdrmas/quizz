@@ -1,5 +1,6 @@
 package com.quizz.impl;
 
+import com.quizz.servce.LevelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,13 +16,13 @@ public class LevelServiceImpl implements LevelService {
 	
 	@Autowired
 	private LevelDao levelDao;
-	
+
+	@Autowired
 	private ThemeDao themeDao;
 	
   
 	@Override
-	public Level addLevel(Level level, Long idTheme) {
-		Theme theme = themeDao.getOne(idTheme);
+	public Level addLevel(Level level, Theme theme) {
 		theme.addLevel(level);
 		return levelDao.save(level);
 	}

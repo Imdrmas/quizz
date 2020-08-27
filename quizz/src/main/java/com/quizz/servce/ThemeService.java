@@ -4,8 +4,12 @@ import org.springframework.stereotype.Service;
 
 import com.quizz.model.Theme;
 
+import java.util.List;
+
 @Service
 public interface ThemeService {
 
-	public Theme addTheme(Theme theme);
+    Theme addTheme(Theme theme);
+
+
 }

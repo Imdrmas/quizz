@@ -1,10 +1,10 @@
 package com.quizz.servce;
 
+import com.quizz.model.Level;
+import com.quizz.model.Question;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface QuestionService {
-	
-	public Question
-
+  Question addQuestion(Question question, Level level);
 }

@@ -8,6 +8,8 @@ import com.quizz.dao.ThemeDao;
 import com.quizz.model.Theme;
 import com.quizz.servce.ThemeService;
 
+import java.util.List;
+
 @Component
 @Transactional
 public class ThemeServiceImpl implements ThemeService {

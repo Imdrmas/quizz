@@ -1,5 +1,6 @@
-package com.quizz.impl;
+package com.quizz.servce;
 
+import com.quizz.model.Theme;
 import org.springframework.stereotype.Service;
 
 import com.quizz.model.Level;
@@ -7,6 +8,6 @@ import com.quizz.model.Level;
 @Service
 public interface LevelService {
 	
-	public Level addLevel(Level level, Long idTheme);
+	Level addLevel(Level level, Theme theme);
 
 }

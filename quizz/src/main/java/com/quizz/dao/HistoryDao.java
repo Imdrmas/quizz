@@ -7,5 +7,7 @@ import com.quizz.model.History;
 
 @Repository
 public interface HistoryDao extends JpaRepository<History, Long> {
+  History findHistoryBySore(int score);
 
+  History findHistoryByUsername(String username);
 }

@@ -1,0 +1,18 @@
+<div id="add">
+  <div class="card">
+    <h2>Créer un difficulty</h2>
+    <br>
+    <form (ngSubmit)="addLevel()">
+      <div class="form-group row">
+
+        <div class="col-sm-9">
+          <input type="text" name="difficulty" [(ngModel)]="level.difficulty" class="form-control" id="name" placeholder="Difficulty">
+        </div>
+      </div>
+
+      <div class="btnContent" style="display: grid;">
+        <button type="submit" class="btn btn-primary">Valider</button>
+      </div>
+    </form>
+  </div>
+</div>
